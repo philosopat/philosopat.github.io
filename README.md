@@ -12,3 +12,20 @@
 <p>5+ Day Itinierary:</p>
 
 <p><strong>Grand Teton National Park</strong></p>
+
+<div class="slider-container">
+  <label for="rating-slider">Rate your experience:</label>
+  <input type="range" id="rating-slider" min="0" max="4" step="1" list="tickmarks" value="2">
+  
+  <!-- Datalist provides tick marks, but not the dynamic text -->
+  <datalist id="tickmarks">
+    <option value="0"></option>
+    <option value="1"></option>
+    <option value="2"></option>
+    <option value="3"></option>
+    <option value="4"></option>
+  </datalist>
+
+  <!-- This span will display the dynamic text -->
+  <span id="text-output">Average</span>
+</div>
