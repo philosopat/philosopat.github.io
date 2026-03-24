@@ -29,3 +29,35 @@
   <!-- This span will display the dynamic text -->
   <span id="text-output">Average</span>
 </div>
+
+.slider-container {
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+#rating-slider {
+  width: 100%;
+  margin-top: 10px;
+}
+
+#text-output {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #04AA6D; /* Example color */
+}
+
+const experienceTexts = ["Very Poor", "Poor", "Average", "Good", "Excellent"];
+
+// Get the slider and output elements
+const slider = document.getElementById("rating-slider");
+const output = document.getElementById("text-output");
+
+// Display the initial text based on the default value
+output.innerHTML = experienceTexts[slider.value];
+
+// Update the text whenever the slider value changes
+slider.oninput = function() {
+  output.innerHTML = experienceTexts[this.value];
+};
