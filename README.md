@@ -13,14 +13,3 @@
 
 <p><strong>Grand Teton National Park</strong></p>
 
-<label for="point-slider">Selection:</label>
-<input type="range" id="point-slider" min="0" max="2" value="0" step="1">
-<p id="slider-text">Option A</p>
-
-const slider = document.getElementById('point-slider');
-const textDisplay = document.getElementById('slider-text');
-const messages = ["Option A", "Option B", "Option C"];
-
-slider.addEventListener('input', function() {
-    textDisplay.textContent = messages[this.value];
-});
