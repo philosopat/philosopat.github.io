@@ -13,51 +13,14 @@
 
 <p><strong>Grand Teton National Park</strong></p>
 
-<div class="slider-container">
-  <label for="rating-slider">Rate your experience:</label>
-  <input type="range" id="rating-slider" min="0" max="4" step="1" list="tickmarks" value="2">
-  
-  <!-- Datalist provides tick marks, but not the dynamic text -->
-  <datalist id="tickmarks">
-    <option value="0"></option>
-    <option value="1"></option>
-    <option value="2"></option>
-    <option value="3"></option>
-    <option value="4"></option>
-  </datalist>
+<label for="point-slider">Selection:</label>
+<input type="range" id="point-slider" min="0" max="2" value="0" step="1">
+<p id="slider-text">Option A</p>
 
-  <!-- This span will display the dynamic text -->
-  <span id="text-output">Average</span>
-</div>
+const slider = document.getElementById('point-slider');
+const textDisplay = document.getElementById('slider-text');
+const messages = ["Option A", "Option B", "Option C"];
 
-.slider-container {
-  width: 80%;
-  margin: 20px auto;
-  text-align: center;
-}
-
-#rating-slider {
-  width: 100%;
-  margin-top: 10px;
-}
-
-#text-output {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #04AA6D; /* Example color */
-}
-
-const experienceTexts = ["Very Poor", "Poor", "Average", "Good", "Excellent"];
-
-// Get the slider and output elements
-const slider = document.getElementById("rating-slider");
-const output = document.getElementById("text-output");
-
-// Display the initial text based on the default value
-output.innerHTML = experienceTexts[slider.value];
-
-// Update the text whenever the slider value changes
-slider.oninput = function() {
-  output.innerHTML = experienceTexts[this.value];
-};
+slider.addEventListener('input', function() {
+    textDisplay.textContent = messages[this.value];
+});
